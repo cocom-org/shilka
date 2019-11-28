@@ -21,6 +21,13 @@ AC_PROG_YACC
 # Checks for header files.
 
 # Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_SIZE_T
+
+# Checks for library functions.
+AC_FUNC_ERROR_AT_LINE
+AC_FUNC_MALLOC
+AC_FUNC_REALLOC
+AC_CHECK_FUNCS([memmove memset strerror])
 
 # Checks for library functions.
 AC_FUNC_ERROR_AT_LINE

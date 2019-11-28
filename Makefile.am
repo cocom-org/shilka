@@ -1,12 +1,23 @@
+AUTOMAKE_OPTIONS = subdir-objects
+
 # Cygwin can not find dll without changing PATH
-PATH := ${PATH}:../AMMUNITION/.libs
+PATH := ${PATH}
 
 bin_PROGRAMS = shilka
-shilka_SOURCES = common.h common.c tab.h tab.c yacc.h anal.h anal.c gen.h gen.c main.c
+shilka_SOURCES = common.h common.c tab.h tab.c yacc.h anal.h anal.c gen.h gen.c main.c \
+AMMUNITION/commline.c \
+AMMUNITION/ticker.c \
+AMMUNITION/vlobject.c \
+AMMUNITION/bits.c \
+AMMUNITION/errors.c \
+AMMUNITION/position.c \
+AMMUNITION/allocate.c \
+AMMUNITION/hashtab.c \
+AMMUNITION/objstack.c
 nodist_shilka_SOURCES = yacc.c ird.c ird.h
 CLEANFILES = yacc.c ird.c ird.h
-shilka_CFLAGS = -I$(srcdir)/../AMMUNITION
-shilka_LDFLAGS = -static ../AMMUNITION/libcocom.la
+shilka_CFLAGS = -I$(srcdir)/AMMUNITION
+shilka_LDFLAGS = -static
 dist_doc_DATA = shilka.txt shilka.info shilka.html shilka-1.html shilka-2.html\
    	        shilka-3.html shilka-4.html shilka-5.html shilka-6.html shilka-7.html shilka-8.html\
 	        shilka.pdf shilka.dvi shilka.ps
