@@ -11,10 +11,6 @@ is also simpler than Gperf in the usage.
 `shilka.dvi', `shilka.ps', `shilka.info*', `shilka*.html',
 `shilka*.rtf'.
 
-NOTE: to circumvent dependency on SPRUT, `touch ird.c ird.h` after
-git checkout. `autoreconf -i` can be used to create configure script.
-
 Please send bug reports and comments to vmakarov@gcc.gnu.org
 
 Vladimir Makarov
-
